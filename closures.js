@@ -99,9 +99,40 @@ function oneFunction(func){
 }
 
 Extension: Challenge 6
-Write a function after that takes the number of times the callback needs to be called before being executed as the first parameter and the callback as the second parameter.
+Write a function after that takes the number of times the callback needs to be called before being
+executed as the first parameter and the callback as the second parameter.
 
-function
+ function  after(num, func){
+   var counter = 1;
+   function incrementCounter () {
+if(counter<=num) {func()}
+
+counter ++;
+   }
+
+   return incrementCounter;
+ }
+
+var call = after(5,function(){
+   console.log("win");
+ });
+
+ call();
+
 
 Extension: Challenge 7
-Write a function delay that accepts a callback as the first parameter and the wait in milliseconds before allowing the callback to be invoked as the second parameter. Any additional arguments after wait are provided to func when it is invoked. HINT: research setTimeout();
+// Write a function delay that accepts a callback
+// as the first parameter and the wait in milliseconds
+// before allowing the callback to be invoked as the second parameter.
+//  Any additional arguments after wait are provided to func when it is invoked.
+//  HINT: research setTimeout();
+
+
+function delay(func,num){
+return setTimeout(func,num);
+}
+
+
+delay(function(){
+   console.log("win");
+ },1000);
