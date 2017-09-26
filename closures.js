@@ -105,14 +105,11 @@ executed as the first parameter and the callback as the second parameter.
  function  after(num, func){
    var counter = 1;
    function incrementCounter () {
-if(counter<=num) {func()}
-
+if(counter==num) {func()}
 counter ++;
    }
-
    return incrementCounter;
  }
-
 var call = after(5,function(){
    console.log("win");
  });
@@ -131,8 +128,6 @@ Extension: Challenge 7
 function delay(func,num){
 return setTimeout(func,num);
 }
-
-
 delay(function(){
    console.log("win");
  },1000);
